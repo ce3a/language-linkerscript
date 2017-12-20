@@ -22,6 +22,9 @@ patterns: [
     include: '#oct_literals'
   }
   {
+    include: '#bin_literals'
+  }
+  {
     include: '#location_counter'
   }
   {
@@ -87,6 +90,13 @@ repository:
     patterns: [
       {
         match: '\\b0[0-7]*\\b'
+        name: 'constant.numeric.octal.linker'
+      }
+  ]
+  bin_literals:
+    patterns: [
+      {
+        match: '\\b[01]*[Bb]\\b'
         name: 'constant.numeric.octal.linker'
       }
   ]
