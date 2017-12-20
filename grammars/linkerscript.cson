@@ -78,6 +78,10 @@ repository:
         match: '\\b0[Xx][0-9A-Fa-f]*\\b'
         name: 'constant.numeric.hex.linker'
       }
+      {
+        match: '\\b[0-9A-Fa-f]*[Hh]\\b'
+        name: 'constant.numeric.hex.linker'
+      }
   ]
   dec_literals:
     patterns: [
@@ -85,11 +89,19 @@ repository:
         match: '\\b[1-9][0-9]*[KM]?\\b'
         name: 'constant.numeric.integer.linker'
       }
+      {
+        match: '\\b[1-9][0-9]*[Dd]?\\b'
+        name: 'constant.numeric.integer.linker'
+      }
   ]
   oct_literals:
     patterns: [
       {
         match: '\\b0[0-7]*\\b'
+        name: 'constant.numeric.octal.linker'
+      }
+      {
+        match: '\\b[0-7]*[Oo]\\b'
         name: 'constant.numeric.octal.linker'
       }
   ]
