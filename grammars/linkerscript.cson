@@ -10,6 +10,9 @@ patterns: [
     include: '#control_keywords'
   }
   {
+    include: '#types'
+  }
+  {
     include: '#hex_literals'
   }
   {
@@ -55,6 +58,13 @@ repository:
           |QUAD |SORT |SECTIONS |SHORT |SIZEOF |SIZEOF_HEADERS)\\b
         '''
         name: 'keyword.control.linker'
+      }
+    ]
+  types:
+    patterns: [
+      {
+        match: '(?x) \\b(?: BSS |COMMENT |CONST |DATA |TEXT |BTEXT )\\b'
+        name: 'support.function.builtin.linker'
       }
     ]
   hex_literals:
