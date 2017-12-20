@@ -82,7 +82,7 @@ repository:
   dec_literals:
     patterns: [
       {
-        match: '\\b[1-9][0-9]*\\b'
+        match: '\\b[1-9][0-9]*[KM]?\\b'
         name: 'constant.numeric.integer.linker'
       }
   ]
