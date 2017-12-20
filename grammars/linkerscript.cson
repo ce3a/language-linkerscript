@@ -1,0 +1,101 @@
+'scopeName': 'source.linker'
+'name': 'Linker Script'
+'fileTypes': ['ld', 'dld']
+
+patterns: [
+  {
+    include: '#comments'
+  }
+  {
+    include: '#control_keywords'
+  }
+  {
+    include: '#hex_literals'
+  }
+  {
+    include: '#int_literals'
+  }
+  {
+    include: '#oct_literals'
+  }
+  {
+    include: '#location_counter'
+  }
+  {
+    include: '#dot_symbols'
+  }
+  {
+    include: '#quoted_symbols'
+  }
+]
+
+repository:
+  comments:
+    patterns: [
+      {
+        begin: '/\\*'
+        beginCaptures:
+          '0':
+            name: 'punctuation.definition.comment.begin.dts'
+        end: '\\*/'
+        endCaptures:
+          '0':
+            name: 'punctuation.definition.comment.end.dts'
+        name: 'comment.block.scilab'
+      }
+    ]
+  control_keywords:
+    patterns: [
+      {
+        match: '''(?x) \\b(?: ABSOLUTE |ADDR |ALIGN |AT
+          |BLOCK |BYTE |COMMON |CONSTRUCTORS |CREATE_OBJECT_SYMBOLS
+          |DEFINED |DISCARD |ENTRY |EXCLUDE_FILE |EXTERN |FILL
+          |KEEP |LENGTH |LOAD |LOADADDR |LONG |MEMORY |NEXT |NOLOAD
+          |ORIGIN |OUTPUT_ARCH |OUTPUT_FORMAT |PHDRS |PROVIDE |PROVIDE_HIDDEN
+          |QUAD |SORT |SECTIONS |SHORT |SIZEOF |SIZEOF_HEADERS)\\b
+        '''
+        name: 'keyword.control.linker'
+      }
+    ]
+  hex_literals:
+    patterns: [
+      {
+        match: '\\b0[Xx][0-9A-Fa-f]*\\b'
+        name: 'constant.numeric.hex.linker'
+      }
+  ]
+  int_literals:
+    patterns: [
+      {
+        match: '\\b[1-9][0-9]*\\b'
+        name: 'constant.numeric.integer.linker'
+      }
+  ]
+  oct_literals:
+    patterns: [
+      {
+        match: '\\b0[0-7]*\\b'
+        name: 'constant.numeric.octal.linker'
+      }
+  ]
+  location_counter:
+    patterns: [
+      {
+        match: '\\B\\.\\B'
+        name: 'variable.language.linker'
+      }
+  ]
+  dot_symbols:
+    patterns: [
+      {
+        match: '(?x) (?: \\B\\.[A-Za-z_\\.0-9\\-]*)'
+        name: 'variable.other.linker'
+      }
+    ]
+  quoted_symbols:
+    patterns: [
+      {
+        match: '(?x) (?: \\"[A-Za-z_\\.0-9\\-\\ ]*\\")'
+        name: 'variable.string.linker'
+      }
+    ]

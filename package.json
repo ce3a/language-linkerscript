@@ -1,0 +1,17 @@
+{
+  "name": "language-linkerscript",
+  "version": "0.0.0",
+  "description": "Linker Script language support in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ce3a/language-linkerscript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ce3a/language-linkerscript/issues"
+  },
+  "license": "MIT"
+}
