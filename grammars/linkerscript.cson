@@ -33,6 +33,9 @@ patterns: [
   {
     include: '#quoted_symbols'
   }
+  {
+    include: '#operators'
+  }
 ]
 
 repository:
@@ -131,5 +134,24 @@ repository:
       {
         match: '(?x) (?: \\"[A-Za-z_\\.0-9\\-\\ ]*\\")'
         name: 'variable.string.linker'
+      }
+    ]
+  operators:
+    patterns: [
+      {
+        match: '=|\\+=|-=|\\*=|/=|<<=|>>=|&=|\\|='
+        name: 'keyword.linker'
+      }
+      {
+        match: '!|~|\\*|/|%|-|\\+|>>|<<|==|!=|>|<|<=|>=|&|\\|'
+        name: 'keyword.linker'
+      }
+      {
+        match: '&&|\\|\\|'
+        name: 'keyword.linker'
+      }
+      {
+        match: '\\?|\\:'
+        name: 'keyword.linker'
       }
     ]
