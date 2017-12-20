@@ -31,6 +31,9 @@ patterns: [
     include: '#dot_symbols'
   }
   {
+    include: '#underscore_symbols'
+  }
+  {
     include: '#quoted_symbols'
   }
   {
@@ -126,6 +129,13 @@ repository:
     patterns: [
       {
         match: '(?x) (?: \\B\\.[A-Za-z_\\.0-9\\-]*)'
+        name: 'entity.name.generic.class.linker'
+      }
+    ]
+  underscore_symbols:
+    patterns: [
+      {
+        match: '(?x) (?: \\b\\_+[A-Za-z_\\.0-9\\-]*)'
         name: 'variable.other.linker'
       }
     ]
