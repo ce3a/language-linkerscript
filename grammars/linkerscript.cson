@@ -107,14 +107,14 @@ repository:
         name: 'constant.numeric.octal.linker'
       }
       {
-        match: '\\b[0-7]*[Oo]\\b'
+        match: '\\b[0-7]+[Oo]\\b'
         name: 'constant.numeric.octal.linker'
       }
   ]
   bin_literals:
     patterns: [
       {
-        match: '\\b[01]*[Bb]\\b'
+        match: '\\b[01]+[Bb]\\b'
         name: 'constant.numeric.octal.linker'
       }
   ]
