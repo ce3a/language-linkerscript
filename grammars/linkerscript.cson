@@ -56,7 +56,7 @@ repository:
         endCaptures:
           '0':
             name: 'punctuation.definition.comment.end.dts'
-        name: 'comment.block.scilab'
+        name: 'comment.block.linker'
       }
     ]
   control_keywords:
