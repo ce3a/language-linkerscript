@@ -175,17 +175,27 @@ repository:
   asserts:
     patterns: [
       {
-        match: '(ASSERT)\\s*\\((.*),\\s*(\\".*\\")\\)'
-        'captures':
-          '1': # ASSERT
+        begin: '\\b(ASSERT)\\b\\s*(\\()(.*)\\s*,'
+        beginCaptures:
+          '1': # keyword
             'name': 'keyword.control.linker'
-          '2': # exp
+          '2': # (
+            'name': 'punctuation.definition.parameters.begin.linker'
+          '3': # exp
             patterns: [
               {
                 include: '$base'
               }
             ]
-          '3': # message
-            'name': 'comment.block.linker'
+        end: '\\)'
+        endCaptures:
+          '0': # )
+            'name': 'punctuation.definition.parameters.end.linker'
+        patterns: [
+          {
+            match: '\\".*\\"' # message
+            name: 'comment.block.linker'
+          }
+        ]
       }
     ]
