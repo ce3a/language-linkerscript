@@ -42,6 +42,9 @@ patterns: [
   {
     include: '#operators'
   }
+  {
+    include: '#includes'
+  }
 ]
 
 repository:
@@ -197,5 +200,16 @@ repository:
             name: 'comment.block.linker'
           }
         ]
+      }
+    ]
+  includes:
+    patterns: [
+      {
+        match: '\\b(INCLUDE)\\b\\s+([\\"\\s\\w\\.\\-/\\\\]+)$'
+        'captures':
+          '1':
+            'name': 'keyword.control.directive.include.linker'
+          '2':
+            'name': 'string.quoted.double.linker'
       }
     ]
