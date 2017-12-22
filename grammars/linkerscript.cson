@@ -73,6 +73,10 @@ repository:
         '''
         name: 'keyword.control.linker'
       }
+      {
+        match: '(?x) \\b(?: len |l |org |o )\\b'
+        name: 'keyword.control.linker'
+      }
     ]
   types:
     patterns: [
