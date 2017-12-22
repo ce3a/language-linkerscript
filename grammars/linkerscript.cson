@@ -37,6 +37,9 @@ patterns: [
     include: '#quoted_symbols'
   }
   {
+    include: '#asserts'
+  }
+  {
     include: '#operators'
   }
 ]
@@ -59,7 +62,7 @@ repository:
   control_keywords:
     patterns: [
       {
-        match: '''(?x) \\b(?: ABSOLUTE |ADDR |ALIGN |ALIAS |ASSERT |AT
+        match: '''(?x) \\b(?: ABSOLUTE |ADDR |ALIGN |ALIAS |AT
           |BIND |BLOCK |BYTE |CACHE |COPYTABLE |CLONE |COMMON |CONSTRUCTORS
           |CRC16 |CRC32 |CREATE_OBJECT_SYMBOLS |DEFINED |DISCARD
           |ENTRY |EXCLUDE_FILE |EXTERN |FILL |GROUP |KEEP
@@ -163,5 +166,22 @@ repository:
       {
         match: '\\?|\\:'
         name: 'keyword.linker'
+      }
+    ]
+  asserts:
+    patterns: [
+      {
+        match: '(ASSERT)\\s*\\((.*),\\s*(\\".*\\")\\)'
+        'captures':
+          '1': # ASSERT
+            'name': 'keyword.control.linker'
+          '2': # exp
+            patterns: [
+              {
+                include: '$base'
+              }
+            ]
+          '3': # message
+            'name': 'comment.block.linker'
       }
     ]
