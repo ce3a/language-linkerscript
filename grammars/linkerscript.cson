@@ -45,6 +45,9 @@ patterns: [
   {
     include: '#includes'
   }
+  {
+    include: '#preprocessor_directives'
+  }
 ]
 
 repository:
@@ -211,5 +214,22 @@ repository:
             'name': 'keyword.control.directive.include.linker'
           '2':
             'name': 'string.quoted.double.linker'
+      }
+    ]
+  preprocessor_directives:
+    patterns: [
+      {
+        match: '^\\s*#\\s*endif\\b'
+        name: 'keyword.control.directive.conditional.c'
+      }
+      {
+        match: '(^\\s*#.*)'
+        'captures':
+          '1':
+            patterns: [
+              {
+                include: 'source.c'
+              }
+            ]
       }
     ]
