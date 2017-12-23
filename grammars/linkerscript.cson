@@ -95,7 +95,7 @@ repository:
         name: 'constant.numeric.hex.linker'
       }
       {
-        match: '\\b[0-9A-Fa-f]*[Hh]\\b'
+        match: '\\b[0-9A-Fa-f]+[Hh]\\b'
         name: 'constant.numeric.hex.linker'
       }
   ]
