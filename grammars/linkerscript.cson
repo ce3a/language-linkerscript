@@ -205,7 +205,7 @@ repository:
   includes:
     patterns: [
       {
-        match: '\\b(INCLUDE)\\b\\s+([\\"\\s\\w\\.\\-/\\\\]+)$'
+        match: '^\\s*(INCLUDE|#\\s*include)\\b\\s+([<>\\"\\s\\w\\.\\-/\\\\]+)$'
         'captures':
           '1':
             'name': 'keyword.control.directive.include.linker'
